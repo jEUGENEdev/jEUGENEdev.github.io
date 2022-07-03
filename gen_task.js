@@ -12,7 +12,7 @@ $(document).ready(function() {
     }).on('click', async function () {
         let num = document.getElementById("task-number");
         if (num.value !== "") {
-            let response = await fetch('https://kompege.ru/api/v1/task/' + num.value);
+            let response = await fetch('https://kompege.ru/api/v1/task/number/' + num.value);
             if (response.ok) {
                 let json = await response.json();
                 let randTask = await json[getRandomArbitrary(0, json.length)];
